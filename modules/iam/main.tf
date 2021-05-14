@@ -620,19 +620,19 @@ resource "aws_iam_policy" "codebuild_deploy_stage_policy" {
 resource "aws_iam_role" "codepipeline_role" {
   name               = "${var.project_name}-Pipeline-${terraform.workspace}"
   assume_role_policy = data.aws_iam_policy_document.codepipeline_assume_role_policy.json
-  tags               = merge(var.tags, map("Name", "${var.project_name}-Pipeline-${terraform.workspace}", "Environment", "${terraform.workspace}", "Role", "IAM Role"))
+  tags               = merge(var.tags, tomap("Name", "${var.project_name}-Pipeline-${terraform.workspace}", "Environment", "${terraform.workspace}", "Role", "IAM Role"))
 }
 
 resource "aws_iam_role" "codebuild_build_stage_role" {
   name               = "${var.project_name}-Build-${terraform.workspace}"
   assume_role_policy = data.aws_iam_policy_document.codebuild_assume_role_policy.json
-  tags               = merge(var.tags, map("Name", "${var.project_name}-Build-${terraform.workspace}", "Environment", "${terraform.workspace}", "Role", "IAM Role"))
+  tags               = merge(var.tags, tomap("Name", "${var.project_name}-Build-${terraform.workspace}", "Environment", "${terraform.workspace}", "Role", "IAM Role"))
 }
 
 resource "aws_iam_role" "codebuild_deploy_stage_role" {
   name               = "${var.project_name}-Deploy-${terraform.workspace}"
   assume_role_policy = data.aws_iam_policy_document.codebuild_assume_role_policy.json
-  tags               = merge(var.tags, map("Name", "${var.project_name}-Deploy-${terraform.workspace}", "Environment", "${terraform.workspace}", "Role", "IAM Role"))
+  tags               = merge(var.tags, tomap("Name", "${var.project_name}-Deploy-${terraform.workspace}", "Environment", "${terraform.workspace}", "Role", "IAM Role"))
 }
 
 /*
