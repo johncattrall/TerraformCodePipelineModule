@@ -17,7 +17,7 @@ terraform {
 
 locals {
   tags = {
-    Owner       = "cleblanc"
+    Owner       = "jcattra"
     ProjectName = "${var.repository_name}-Pipeline"
   }
 }
