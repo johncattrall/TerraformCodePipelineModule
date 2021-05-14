@@ -1,7 +1,7 @@
 variable "namespace" {
   type        = string
   description = "The global namespace for your infra"
-  default     = "cleblanc"
+  default     = "jcattra"
 }
 
 variable "account_name" {
