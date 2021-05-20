@@ -45,21 +45,7 @@ terraform
 
 This repo also includes terraform to bootstrap the backend storage for a terraform envionment, and can be ran from the `bootstrap` directory by executing `terraform apply` in an authenticated shell. This will provision Terraform state storage as described @ https://www.terraform.io/docs/backends/types/s3.html.
 
-# How to use 
 
-1. Install Terraform
-2. Authenticate a shell against an AWS account & code.amazon
-3. Mirror these repos in your/customer's github account
-  - (This repo)
-  - https://code.amazon.com/packages/TerraformExamplePayload/trees/mainline
-  - https://code.amazon.com/packages/TerraformLambdaModule/trees/mainline
-4. replace instances of 'cleblanc' with your own unique identifier
-4. Bootstrap a terraform s3 backend via `cd bootstrap && terraform apply`
-5. Create 3 SSM string parameters
-  - GITHUB_TOKEN - a github token allowing repo access
-  - WEBHOOK_TOKEN - an arbitrary secret used to create a github webhook
-6. Follow the readme of TerraformExamplePayload
-7. Adjust iam policies where needed to follow PoLP
 
 # List of Variables Supported by this Terraform Module
 
