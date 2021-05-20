@@ -4,7 +4,6 @@ This module defines a *pipeline* which can deliver a *payload*. Specifically, an
 
 *Pipelines* created by this module will execute when new commits are pushed to the corresponding repo & branch it is connected to.
 
-An example consumer app using this pipeline module can be found @ https://code.amazon.com/packages/TerraformExamplePayload/trees/mainline.
 
 This project is intended to integrate with github
 
